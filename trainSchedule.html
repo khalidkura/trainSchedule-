@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Train Schedule</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+  <style>
+    .card-body a {
+      word-break: break-all;
+    }
+
+    .articleHeadline {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron" style="background-color: rgb(3, 5, 8) ; color: rgb(247, 3, 3);">
+      <h1 class="text-center">
+        <strong>
+          <i class="fa fa-train-o"></i>Train Schedule</strong>
+      </h1>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <div class="card">
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-list-alt"></i>Add Train</strong>
+          </div>
+          <div class="card-body">
+
+            <form role="form">
+
+              <div class="form-group">
+                <label for="name">Train Name:</label>
+                <input type="text" class="form-control" id="trainName">
+              </div>
+
+              <div class="form-group">
+                <label for="dest">Destination:</label>
+                <input type="text" class="form-control" id="destination">
+              </div>
+
+              <div class="form-group">
+                <label for="time">First Train Time (HH:mm - Military Time):</label>
+                <input type="text" class="form-control" id="firstTrainTime">
+              </div>
+
+              <div class="form-group">
+                <label for="freq">Frequency (min):</label>
+                <input type="text" class="form-control" id="frequency">
+              </div>
+
+              <button type="submit" class="btn btn-default" id="search">
+                <i class="fa fa-search"></i> Submit</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+
+        <div class="card">
+
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-table"></i>Current Train Schedule</strong>
+          </div>
+
+          <div class="card-body" id="train-section">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+
+</body>
+
+</html>
